@@ -29,7 +29,8 @@ end
 
 post '/stop' do
   DB.collection(:tasks).update(
-    {'_id' => mongo_id}, {'$set' => {'stop' => Time.now.to_i}}
+    {'_id' => mongo_id}, 
+    {'$set' => {'stop' => Time.now.to_i, 'description' => params['description']}}
   )
   redirect '/'
 end

@@ -1,0 +1,33 @@
+.task {
+  line-height: 2em;
+}
+
+.activity,
+.time-start,
+.time-stop,
+.time-diff {
+  background-color: red;
+  padding: 0.3em;
+  margin: 0.3em;
+  border-radius: 0.3em;
+}
+
+.activity {
+  background-color: #B9DEC8;
+}
+
+.time-start,
+.time-stop {
+  background-color: black;
+  color: white;
+}
+
+.time-diff {
+  background-color: #2C5A67;
+  color: white;
+}
+
+#description {
+  width: 600px;
+  height: 400px;
+}

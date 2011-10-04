@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="/tracker.css">
 <form action='/start' method='POST'>
   Action:<input type="text" name="activity"></input>
   <input type="submit" value="Start"></input>
@@ -8,10 +9,16 @@
   <ul id="tasks">
     <% @tasks.each do |row| %>
     <li class="task">
-      <span class="activity"><%= row['activity']%></span>
-      <span class="time-start"><%= Time.at(row['start'])%></span>
-      <span class="time-stop"><%= Time.at(row['stop'])%></span>
-      <span class="time-diff"><%= row['stop'] - row['start'] %></span>
+      <span class="activity"><%= row['activity'] %></span>
+      <% if not (row['start'].nil? || row['stop'].nil?) %>
+        <span class="time-diff"><%= (row['stop'] - row['start']) / 60 %></span>
+      <% end %>
+      <% if not row['start'].nil? %>
+      <span class="time-start"><%= Time.at(row['start']) %></span>
+      <% end %>
+      <% if not row['stop'].nil? %>
+        <span class="time-stop"><%= Time.at(row['stop']) %></span>
+      <% end %>
     </li>
     <% end %>
   </ul>

@@ -1,5 +1,13 @@
-<div><%= @task['activity'] %></input>
+<div>
+  <link rel="stylesheet" type="text/css" href="/tracker.css">
+  <span class="activity">Activity: <%= @task['activity'] %></span>
+  <span class='time-start'>Started: <%= Time.at(@task['start'])%></span>
+</div>
+<br />
 <form action='/stop' method='POST'>
   <input type="submit" value="Stop"></input>
   <input type="hidden" name='id' value="<%= @task['_id']%>"></input>
+  <div>Description:
+    <textarea id="description" name='description'></textarea>
+  </div>
 </form>
