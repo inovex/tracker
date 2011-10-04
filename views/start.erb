@@ -1,0 +1,18 @@
+<form action='/start' method='POST'>
+  Action:<input type="text" name="activity"></input>
+  <input type="submit" value="Start"></input>
+</form>
+
+<h1>Tasks</h1>
+<% if not @tasks.nil? %>
+  <ul id="tasks">
+    <% @tasks.each do |row| %>
+    <li class="task">
+      <span class="activity"><%= row['activity']%></span>
+      <span class="time-start"><%= Time.at(row['start'])%></span>
+      <span class="time-stop"><%= Time.at(row['stop'])%></span>
+      <span class="time-diff"><%= row['stop'] - row['start'] %></span>
+    </li>
+    <% end %>
+  </ul>
+<% end %>

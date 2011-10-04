@@ -1,0 +1,5 @@
+<div><%= @task['activity'] %></input>
+<form action='/stop' method='POST'>
+  <input type="submit" value="Stop"></input>
+  <input type="hidden" name='id' value="<%= @task['_id']%>"></input>
+</form>
