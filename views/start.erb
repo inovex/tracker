@@ -24,10 +24,10 @@
           <span class="time-diff"><%= (row['stop'] - row['start']) / 60 %></span>
         <% end %>
         <% if not row['start'].nil? %>
-        <span class="time-start"><%= Time.at(row['start']) %></span>
+        <span class="time-start"><%= Time.at(row['start']).strftime('%H:%M') %></span>
         <% end %>
         <% if not row['stop'].nil? %>
-          <span class="time-stop"><%= Time.at(row['stop']) %></span>
+          <span class="time-stop"><%= Time.at(row['stop']).strftime('%H:%M') %></span>
         <% end %>
       </li>
   <% end %>
