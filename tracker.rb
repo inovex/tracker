@@ -13,7 +13,7 @@ def mongo_id
 end
 
 get '/' do
-  @tasks = DB.collection(:tasks).find()
+  @tasks = DB.collection(:tasks).find().sort('start', :asc)
   
   erb :start
 end
