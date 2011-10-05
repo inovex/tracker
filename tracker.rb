@@ -3,7 +3,6 @@ require 'rubygems'  # not necessary for Ruby 1.9
 gem 'tilt','=1.2.2' # sinatra erb support doesn't work with tilt 1.3.x
 require 'sinatra'
 require 'uri'
-require 'json'
 require 'mongo'
 
 DB = Mongo::Connection.new("localhost", 27017).db('tracker')
