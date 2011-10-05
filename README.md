@@ -2,8 +2,13 @@
 
 tracker is a simple task/time-tracker
 
+# Requirements
 
-## TODO
+- Ruby 1.8/1.9
+- mongodb running on default port (27017) on localhost
+(can be changed in `tracker.rb`)
 
-- field for comments/details
-- resume mode
+## Usage
+
+- install dependencies: `bundle install`
+- run tracker: `ruby tracker.rb`
