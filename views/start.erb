@@ -9,11 +9,12 @@
   <% @tasks.each do |row| %>
 
     <% @current_hours = row['start'] / (60*60*24)%>
+    
     <% if @last_hours != @current_hours %>
-    <% if @last_hours.nil? %>
-      </ul>
-    <% end %>
-    <h2><%= Time.at(row['start']).strftime('%Y-%m-%d') %></h2>
+      <% if not @last_hours.nil? %>
+        </ul>
+      <% end %>
+      <h2><%= Time.at(row['start']).strftime('%Y-%m-%d') %></h2>
       <ul id="tasks">
       <% @last_hours = @current_hours %>
     <% end %>
@@ -31,4 +32,5 @@
         <% end %>
       </li>
   <% end %>
+  </ul>
 <% end %>
